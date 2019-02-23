@@ -7,13 +7,13 @@ import java.lang.ArrayIndexOutOfBoundsException;
 
 
 /**
- * A class containing the needed algorithms to solve the TSP.
+ * A class containing the needed algorithms to get an approximate solution for the TSP.
  * @author Diego Antonio Fonseca Guzmán
  */
 public class Prim {
 
     /**
-     * Sets up graph and calls the Prim's Algorithm method.
+     * Sets up graph and calls the Prim's Algorithm method. Checks correct application usage.
      * @param args the command line arguments
      */
     public static void main(String[] args) throws FileNotFoundException, ArrayIndexOutOfBoundsException{
