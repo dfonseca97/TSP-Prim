@@ -1,6 +1,6 @@
 package tsp;
-
 import java.util.ArrayList;
+
 /**
  * Base class used for representing a graph.
  * 

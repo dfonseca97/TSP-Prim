@@ -1,7 +1,6 @@
 package tsp;
 import java.util.ArrayList;
 
-
 /**
  * Graph implementation using an adjacency matrix. The matrix represents a connection between two nodes,
  * the row represents the source and the column represents the destination, the value on that spot is the weight.

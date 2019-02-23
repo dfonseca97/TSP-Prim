@@ -4,8 +4,6 @@ import java.util.Set;
 import java.io.FileNotFoundException;
 import java.lang.ArrayIndexOutOfBoundsException;
 
-
-
 /**
  * A class containing the needed algorithms to get an approximate solution for the TSP.
  * @author Diego Antonio Fonseca Guzmán
@@ -122,7 +120,7 @@ public class Prim {
     }
 
     /**
-     * Constructs the Tree used to evaluate the shortest circuit in the graph.
+     * Constructs the Minimum Spanning Tree used to evaluate the shortest circuit in the graph.
      * @param g Graph to be evaluated
      * @param nodes Array containing the Minimum Spanning Tree
      * @return Minimum Spanning Tree
