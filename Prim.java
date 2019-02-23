@@ -2,6 +2,8 @@ package tsp;
 import java.util.HashSet;
 import java.util.Set;
 import java.io.FileNotFoundException;
+import java.lang.ArrayIndexOutOfBoundsException;
+
 
 
 /**
@@ -14,7 +16,13 @@ public class Prim {
      * Sets up graph and calls the Prim's Algorithm method.
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args) throws FileNotFoundException, ArrayIndexOutOfBoundsException{
+
+        if(args.length == 0){
+
+            System.out.println("Proper Usage is: java program filename");
+            System.exit(0);
+        }
 
         try{
 
@@ -27,9 +35,11 @@ public class Prim {
             System.out.println("The specified file does not exist.");
             
         } catch (ArrayIndexOutOfBoundsException oob) {
-           
-            System.out.println("The specified graph size has been exeeded."); 
-         }
+            
+            System.out.println("The specified graph size has been exeeded.");
+        }
+        
+        
     }
 
     /**
@@ -96,11 +106,11 @@ public class Prim {
 
         }
 
-        //  printMST(g, res);
+        printMST(g, res);
         Tree tree = makeTree(g, res);
         System.out.print("Shortest Circuit:");
         tree.printTree(tree.getNodes().get(0));
-        System.out.println();
+        System.out.println("End");
 
         for (int i = 1; i < g.size; ++i) {
 
@@ -153,7 +163,7 @@ public class Prim {
      */
     public static void printMST(Graph g, int[] res) {
 
-        System.out.println("MST: ");
+        System.out.println("Minimum Spanning Tree: ");
         
         for (int i = 1; i < g.size; ++i) {
 

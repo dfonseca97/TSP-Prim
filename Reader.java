@@ -27,7 +27,7 @@ class Reader{
      * 
      * @return Graph This is the text represented as a graph.
      */
-    public Graph readGraph(){
+    public Graph readGraph() {
 
         int size = scan.nextInt();
         Graph g = new AMGraph(size);
@@ -39,6 +39,7 @@ class Reader{
             int weight = scan.nextInt();
 
             g.addArc(source, destination, weight);
+            
         }
 
         scan.close();

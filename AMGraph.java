@@ -1,6 +1,6 @@
 package tsp;
 import java.util.ArrayList;
-import java.lang.ArrayIndexOutOfBoundsException;
+
 
 /**
  * Graph implementation using an adjacency matrix. The matrix represents a connection between two nodes,
@@ -38,11 +38,9 @@ public class AMGraph extends Graph {
         
     }
 
-    public void addArc(int source, int destination, int weight){
+    public void addArc(int source, int destination, int weight) {
         
         vertices[source][destination] = weight;
-
-
     }
 
     public ArrayList<Integer> getSuccessors(int vertex) {
