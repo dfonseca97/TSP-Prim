@@ -34,7 +34,7 @@ public class Main {
             
         } catch (ArrayIndexOutOfBoundsException oob) {
             
-            System.out.println("The specified graph size has been exeeded.");
+            System.out.println("The specified graph is no adequate for the problem.");
         }
         
         

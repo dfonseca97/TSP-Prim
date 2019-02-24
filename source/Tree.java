@@ -3,7 +3,8 @@ import java.util.List;
 import java.util.ArrayList;
 
 /**
- * Class used for creating a tree data structure, needed to perform Prim's Algorithm.
+ * Class used for creating a tree data structure, 
+ * needed to perform Prim's Algorithm.
  * Makes use of tree nodes.
  * @author Diego Antonio Fonseca Guzmán
  */
@@ -12,7 +13,7 @@ public class Tree {
     /**
      * A list of the node's children.
      */
-    private List<TreeNode> nodes;
+    private final List<TreeNode> nodes;
 
     /**
      * Creates a Tree data structure. It is represented as a list of tree nodes.

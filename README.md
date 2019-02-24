@@ -1,6 +1,6 @@
 # Traveling Salesman Problem Approximation
 
-This program is an approximation to the solution of the Traveling Salesman Problem. It consists of finding the most efficient circuit in a weighted graph.
+This program is an approximation to the solution of the Traveling Salesman Problem. It consists of finding the most efficient circuit in a weighted, connected graph.
 It is solved by creating a Minimum Spanning Tree and traversing it in pre-order, which will result in the most efficient circuit.
 
 ## Compiling the Source Code

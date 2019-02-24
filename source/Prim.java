@@ -120,7 +120,6 @@ public class Prim {
 
         }
 
-        Object[] SetArr = set.toArray();
 
         for (int i = 0; i < graph.size; ++i) {
 
