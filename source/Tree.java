@@ -2,24 +2,34 @@ package tsp;
 import java.util.ArrayList;
 
 /**
- * Class used for creating a Tree data structure, needed to perform Prim's Algorithm.
- * Makes use of Tree nodes.
+ * Class used for creating a tree data structure, needed to perform Prim's Algorithm.
+ * Makes use of tree nodes.
  * @author Diego Antonio Fonseca Guzmán
  */
 public class Tree {
 
     private ArrayList<TreeNode> nodes;
 
+    /**
+     * Creates a Tree data structure. It is represented as a list of tree nodes.
+     */
     public Tree() {
 
         nodes = new ArrayList<>();
     }
 
+    /**
+     * Adds a new node to the tree.
+     */
     public void addNode(TreeNode node) {
 
         this.nodes.add(node);
     }
 
+    /**
+     * Get a list of the nodes in a tree.
+     * @return ArrayList<TreeNode> All of the nodes in one tree.
+     */
     public ArrayList<TreeNode> getNodes() {
 
         return nodes;

@@ -8,7 +8,7 @@ It is solved by creating a Minimum Spanning Tree and traversing it in pre-order,
 To successfully run the program an updated Java Develpment Kit is needed, Official Oracle site for Java https://www.oracle.com/technetwork/java/javase/overview/index.html.
 Next up, compile the source code, using this command:
 
-   > $ javac -d . *.java 
+   > $ javac -d . source/*.java 
 
 ## Creating the Graph information
 
