@@ -1,4 +1,5 @@
 package tsp;
+import java.util.List;
 import java.util.ArrayList;
 
 /**
@@ -8,7 +9,10 @@ import java.util.ArrayList;
  */
 public class Tree {
 
-    private ArrayList<TreeNode> nodes;
+    /**
+     * A list of the node's children.
+     */
+    private List<TreeNode> nodes;
 
     /**
      * Creates a Tree data structure. It is represented as a list of tree nodes.
@@ -21,7 +25,7 @@ public class Tree {
     /**
      * Adds a new node to the tree.
      */
-    public void addNode(TreeNode node) {
+    public void addNode(final TreeNode node) {
 
         this.nodes.add(node);
     }
@@ -30,7 +34,7 @@ public class Tree {
      * Get a list of the nodes in a tree.
      * @return ArrayList<TreeNode> All of the nodes in one tree.
      */
-    public ArrayList<TreeNode> getNodes() {
+    public List<TreeNode> getNodes() {
 
         return nodes;
     }
@@ -40,7 +44,7 @@ public class Tree {
      * a good aproximation of the shortest circuit.
      * @param root Tree's root
      */
-    public void printTree(TreeNode root) {
+    public void printTree(final TreeNode root) {
 
         System.out.print(root.getData() + " -> ");
 

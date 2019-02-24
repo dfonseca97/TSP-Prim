@@ -27,7 +27,7 @@ Weight is the cost to travel from one vertex to another.
 
 After the graph information is ready, run the program as follows:
 
-   >  $ java tsp.Prim graph.txt
+   >  $ java tsp.Main graph.txt
 
 Where the argument is the name of the file containing the graph information. In this case the example, graph.txt, is included.
 The output will show the shortest circuit and its overall cost.

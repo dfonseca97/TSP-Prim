@@ -10,27 +10,40 @@ import java.io.FileNotFoundException;
  */
 class Reader{
 
-    private File f;
-    private Scanner scan;
+    /**
+     * The file with the graph information
+     */
+    private final File file;
 
+    /**
+     * The scanner that will read the file information
+     */
+    private final Scanner scan;
+
+    /**
+     * Creates a new reader to extract graph information from a file.
+     */
     Reader(String fileDir) throws FileNotFoundException{
 
-        this.f = new File(fileDir);
-        scan = new Scanner(this.f);
+        this.file = new File(fileDir);
+        scan = new Scanner(this.file);
     }
 
     /**
-     * This method reads a document with graph information and loads it into the program.
-     * The first line of the document should be the amount of vertices, the next lines 
-     * will contain each source, destination, weight of the arcs in that order. The method
-     * then creates the graph and closes the scanner, releasing the resources.
+     * This method reads a document 
+     * with graph information and loads it into the program.
+     * The first line of the document should be 
+     * the amount of vertices, the next lines 
+     * will contain each source, destination, weight of the arcs 
+     * in that order. The method then creates 
+     * the graph and closes the scanner, releasing the resources.
      * 
      * @return Graph This is the text represented as a graph.
      */
     public Graph readGraph() {
 
-        int size = scan.nextInt();
-        Graph g = new AMGraph(size);
+        final int size = scan.nextInt();
+        Graph graph = new AMGraph(size);
 
         while(scan.hasNext()){
 
@@ -38,11 +51,11 @@ class Reader{
             int destination = scan.nextInt();
             int weight = scan.nextInt();
 
-            g.addArc(source, destination, weight);
+            graph.addArc(source, destination, weight);
             
         }
 
         scan.close();
-        return g;
+        return graph;
     }
 }

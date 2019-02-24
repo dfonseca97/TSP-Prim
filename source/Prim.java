@@ -1,43 +1,26 @@
 package tsp;
 import java.util.HashSet;
 import java.util.Set;
-import java.io.FileNotFoundException;
-import java.lang.ArrayIndexOutOfBoundsException;
 
 /**
- * A class containing the needed algorithms to get an approximate solution for the TSP.
+ * A class containing the needed algorithms to get an approximate 
+ * solution for the TSP.
  * @author Diego Antonio Fonseca Guzmán
  */
 public class Prim {
 
     /**
-     * Sets up graph and calls the Prim's Algorithm method. Checks correct application usage.
-     * @param args the command line arguments
+     * Graph to be analyzed.
      */
-    public static void main(String[] args) throws FileNotFoundException, ArrayIndexOutOfBoundsException{
+    private final Graph graph;
 
-        if(args.length == 0){
+    /**
+     * Creates an instance of the class. Requires a graph to
+     * apply the algorithm to. 
+     */
+    public Prim(final Graph graph){
 
-            System.out.println("Proper Usage is: java program filename");
-            System.exit(0);
-        }
-
-        try{
-
-           Reader r = new Reader(args[0]);
-           Graph g =  r.readGraph();
-           prim(g);
-
-        } catch(FileNotFoundException fnf){
-           
-            System.out.println("The specified file does not exist.");
-            
-        } catch (ArrayIndexOutOfBoundsException oob) {
-            
-            System.out.println("The specified graph size has been exeeded.");
-        }
-        
-        
+        this.graph = graph;
     }
 
     /**
@@ -69,17 +52,17 @@ public class Prim {
      * Applies Prim's algorithm to a graph. This will result in the Minimum
      * Spanning Tree of the graph. A Minimum Spanning Tree is a representation
      * of the graph including only the minimum weight arcs.
-     * @param g Graph to apply Prim's algorithm on
+     * @param graph Graph to apply Prim's algorithm on
      * @return Integer Array representing the Minimum Spanning Tree
      */
-    public static int[] prim(Graph g) {
+    public int[] prim() {
 
-        int[] res = new int[g.size];
-        boolean[] visited = new boolean[g.size];
-        int[] weights = new int[g.size];
+        int[] res = new int[graph.size];
+        boolean[] visited = new boolean[graph.size];
+        int[] weights = new int[graph.size];
         int sum = 0;
 
-        for (int i = 0; i < g.size; ++i) {
+        for (int i = 0; i < graph.size; ++i) {
 
             weights[i] = Integer.MAX_VALUE;
         }
@@ -87,32 +70,32 @@ public class Prim {
         weights[0] = 0;
         res[0] = -1;
 
-        for (int i = 0; i < g.size; ++i) {
+        for (int i = 0; i < graph.size; ++i) {
 
             int next = minVal(visited, weights);
             visited[next] = true;
 
-            for (int j = 0; j < g.size; ++j) {
+            for (int j = 0; j < graph.size; ++j) {
 
-                if (g.getWeight(next, j) > 0 && !visited[j] && g.getWeight(next, j) < weights[j]) {
+                if (graph.getWeight(next, j) > 0 && !visited[j] && graph.getWeight(next, j) < weights[j]) {
 
                     res[j] = next;
-                    weights[j] = g.getWeight(next, j);
+                    weights[j] = graph.getWeight(next, j);
 
                 }
             }
 
         }
 
-        printMST(g, res);
-        Tree tree = makeTree(g, res);
+        printMST(res);
+        final Tree tree = makeTree(res);
         System.out.print("Shortest Circuit:");
         tree.printTree(tree.getNodes().get(0));
         System.out.println("End");
 
-        for (int i = 1; i < g.size; ++i) {
+        for (int i = 1; i < graph.size; ++i) {
 
-            sum += g.getWeight(res[i], i);
+            sum += graph.getWeight(res[i], i);
         }
 
         System.out.println("Total distance: " + sum * 2);
@@ -120,15 +103,16 @@ public class Prim {
     }
 
     /**
-     * Constructs the Minimum Spanning Tree used to evaluate the shortest circuit in the graph.
-     * @param g Graph to be evaluated
+     * Constructs the Minimum Spanning Tree used to 
+     * evaluate the shortest circuit in the graph.
+     * @param graph Graph to be evaluated
      * @param nodes Array containing the Minimum Spanning Tree
      * @return Minimum Spanning Tree
      */
-    public static Tree makeTree(Graph g, int[] nodes) {
+    public Tree makeTree(int[] nodes) {
 
-        Tree res = new Tree();
-        Set<Integer> set = new HashSet<Integer>();
+        final Tree res = new Tree();
+        final Set<Integer> set = new HashSet<>();
 
         for (int i = 0; i < nodes.length; ++i) {
 
@@ -138,14 +122,14 @@ public class Prim {
 
         Object[] SetArr = set.toArray();
 
-        for (int i = 0; i < g.size; ++i) {
+        for (int i = 0; i < graph.size; ++i) {
 
             TreeNode node = new TreeNode(i);
             res.addNode(node);
 
         }
 
-        for (int i = 1; i < g.size; ++i) {
+        for (int i = 1; i < graph.size; ++i) {
 
             res.getNodes().get(nodes[i]).addChild(res.getNodes().get(i));
 
@@ -155,17 +139,18 @@ public class Prim {
     }
 
     /**
-     * Prints the connection between nodes in the Minimum Spanning Tree and their respective weights.
-     * @param g Graph to be evaluated
+     * Prints the connection between nodes in 
+     * the Minimum Spanning Tree and their respective weights.
+     * @param graph Graph to be evaluated
      * @param res Integer Array representing the Minimum Spanning Tree
      */
-    public static void printMST(Graph g, int[] res) {
+    public void printMST(int[] res) {
 
         System.out.println("Minimum Spanning Tree: ");
         
-        for (int i = 1; i < g.size; ++i) {
+        for (int i = 1; i < graph.size; ++i) {
 
-            System.out.println(res[i] + ", " + i + " Weight: " + g.getWeight(res[i], i));
+            System.out.println(res[i] + ", " + i + " Weight: " + graph.getWeight(res[i], i));
             
         }
     }
