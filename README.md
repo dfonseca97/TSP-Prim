@@ -65,6 +65,11 @@ Input file:
 
 ![Run Configuration](runEclipse4.png)
 
+After the argument is set, just select the Main class and run the project.
+
 Program output:
 
 ![Run Configuration](runEclipse3.png)
+
+## On Terminal
+
