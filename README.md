@@ -73,3 +73,14 @@ Program output:
 
 ## On Terminal
 
+To run on terminal we first compile the source code:
+
+![Run Configuration](runTerminal1.png)
+
+Next up, let's take a look at our input file:
+
+![Run Configuration](runTerminal2.png)
+
+Then we proceed to the bin directory and run the program:
+
+![Run Configuration](runTerminal3.png)
