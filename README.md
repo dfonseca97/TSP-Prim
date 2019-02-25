@@ -71,6 +71,17 @@ Program output:
 
 ![Run Configuration](runEclipse3.png)
 
+## JUnit Tests
+
+The tests are located on the tspTest package, to run them right click and select Run As > JUnit Test:
+
+![Run Configuration](jUnit1.png)
+
+To check the test status look at the top left panel:
+
+
+![Run Configuration](jUnit2.png)
+
 ## On Terminal
 
 To run on terminal we first compile the source code:
