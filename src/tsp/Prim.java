@@ -52,6 +52,7 @@ public class Prim {
      * Applies Prim's algorithm to a graph. This will result in the Minimum
      * Spanning Tree of the graph. A Minimum Spanning Tree is a representation
      * of the graph including only the minimum weight arcs.
+     * @param graph Graph to apply Prim's algorithm on
      * @return Integer Array representing the Minimum Spanning Tree
      */
     public int[] prim() {
@@ -98,6 +99,7 @@ public class Prim {
         }
 
         System.out.println("Total distance: " + sum * 2);
+     
         return res;
     }
 
@@ -138,6 +140,7 @@ public class Prim {
     /**
      * Prints the connection between nodes in 
      * the Minimum Spanning Tree and their respective weights.
+     * @param graph Graph to be evaluated
      * @param res Integer Array representing the Minimum Spanning Tree
      */
     public void printMST(int[] res) {

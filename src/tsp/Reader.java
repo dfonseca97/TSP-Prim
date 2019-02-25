@@ -8,7 +8,7 @@ import java.io.FileNotFoundException;
  * 
  * @author Diego Antonio Fonseca Guzmán
  */
-class Reader{
+public class Reader{
 
     /**
      * The file with the graph information
@@ -23,7 +23,7 @@ class Reader{
     /**
      * Creates a new reader to extract graph information from a file.
      */
-    Reader(String fileDir) throws FileNotFoundException{
+    public Reader(String fileDir) throws FileNotFoundException{
 
         this.file = new File(fileDir);
         scan = new Scanner(this.file);
