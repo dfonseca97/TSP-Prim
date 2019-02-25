@@ -27,7 +27,7 @@ Next up, run the main class and the output will be printed.
 
 The tests classes are located on the tspTest package. To run the tests right-click on the tspTest package and run as > JUnit test. This will show the test results.
 
-## Compiling the Source Code
+## Compiling the Source Code on a Terminal
 
 To successfully run the program an updated Java Develpment Kit is needed, Official Oracle site for Java https://www.oracle.com/technetwork/java/javase/overview/index.html.
 Next up, compile the source code, using this command:
@@ -36,7 +36,7 @@ Next up, compile the source code, using this command:
 
 This will compile all of the source classes in its own package, tsp.
 
-## Running the Program
+## Running the Program on a Terminal
 
 After the graph information is ready, run the program as follows:
 
