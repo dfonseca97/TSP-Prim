@@ -16,7 +16,7 @@ The program receives a file through command line. An example "graph.txt" is incl
    
    > Origin Destination Weight 
     
-The parameters should be written in that same order, each one is an integer. The Origin and Destination are vertices in the graph. 
+The parameters should be written in that same order, each one is an integer. The Origin and Destination are vertices in the graph and they are numbered in an interval depending on the size of the graph. In a graph with 10 vertices each will have a number assigned from 0 to 9, with no repeated numbers.
 Weight is the cost to travel from one vertex to another.
 
 ## Running on Eclipse
@@ -46,3 +46,25 @@ After the graph information is ready, run the program as follows:
 
 Where the argument is the name of the file containing the graph information. In this case the example, graph.txt, is included.
 The output will show the shortest circuit and its overall cost.
+
+## Examples
+
+On this section a run example will be shown for both of the running methods.
+
+### On Eclipse
+
+To run on Eclipse, first set the argument on Run > Run Configurations > Arguments, as shown in the following images:
+
+![Run Configuration](runEclipse1.png)
+
+Adding arguments:
+
+![Add arguments](runEclipse2.png)
+
+Input file:
+
+![Run Configuration](runEclipse4.png)
+
+Program output:
+
+![Run Configuration](runEclipse3.png)
